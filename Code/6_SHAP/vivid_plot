@@ -1,0 +1,12 @@
+library(vivid)
+
+# Sample dataset and model preparation
+df <- read.csv("nomal_current_feature.csv")  # Replace with the path to your CSV file
+
+# Fit a model (Random Forest, for example)
+library(randomForest)
+model <- randomForest(ttf ~ I1 + k + t1 + I2 + t2, data = df)
+
+# Create a vivid plot to analyze feature relationships
+vivid::vivid(model, data = df)
+
